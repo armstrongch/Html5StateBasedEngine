@@ -1,0 +1,27 @@
+:root {
+	--dark_color: #3D405B;
+	--white_color: #F4F1DE;
+	--yellow_color: #F2CC8F;
+	--green_color: #81B29A;
+	--orange_color: #e07a5f;
+}
+
+body {
+	background-color: var(--dark_color);
+	color: var(--white_color);
+}
+
+table {
+	width: 100%;
+}
+
+tr {
+	width: 100%;
+	text-align: center;
+}
+
+td {
+	padding: 3px;
+	text-align: center;
+	outline: 1px solid red;
+}
