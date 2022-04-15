@@ -28,3 +28,18 @@ td {
 	text-align: center;
 	outline: 1px solid var(--white_color);
 }
+
+button {
+	border: 1px solid var(--white_color);
+	background-color: var(--dark_color);
+	color: var(--white_color);
+	padding: 10px;
+	font-size: large;
+	cursor: pointer;
+}
+
+button:hover {
+	border: 1px solid var(--dark_color);
+	background-color: var(--white_color);
+	color: var(--dark_color);
+}
