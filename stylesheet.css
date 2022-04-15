@@ -9,10 +9,13 @@
 body {
 	background-color: var(--dark_color);
 	color: var(--white_color);
+	font-size: large;
 }
 
 table {
 	width: 100%;
+	border-spacing: 10px;
+	table-layout: fixed;
 }
 
 tr {
@@ -21,7 +24,7 @@ tr {
 }
 
 td {
-	padding: 3px;
+	padding: 10px;
 	text-align: center;
-	outline: 1px solid red;
+	outline: 1px solid var(--white_color);
 }
