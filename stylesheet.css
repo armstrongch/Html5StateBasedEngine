@@ -1,9 +1,9 @@
 :root {
-	--dark_color: #3D405B;
-	--white_color: #F4F1DE;
-	--yellow_color: #F2CC8F;
-	--green_color: #81B29A;
-	--orange_color: #e07a5f;
+	--dark_color: #3D405B; /* rgb(61, 64, 91) */
+	--white_color: #F4F1DE; /* rgb(244, 241, 222) */
+	--yellow_color: #F2CC8F; /* rgb(242, 204, 143) */
+	--green_color: #81B29A; /* rgb(129, 178, 154) */
+	--orange_color: #e07a5f; /* rgb(224, 122, 95) */
 }
 
 body {
@@ -42,4 +42,16 @@ button:hover {
 	border: 1px solid var(--dark_color);
 	background-color: var(--white_color);
 	color: var(--dark_color);
+}
+
+.list_item_text {
+	text-align: left;
+	text-align: left;
+}
+
+.list_item_image {
+	float: left;
+	max-width: 20%;
+	height: auto;
+	padding: 10px;
 }
