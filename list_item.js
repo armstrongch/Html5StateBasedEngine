@@ -15,6 +15,10 @@ var list_item =
 	AddListItemsToRow: function(row_name, list_item_array)
 	{
 		var column_count = this.GetColumnCount(row_name);
+		for (let i = 0; i < column_count; i += 1)
+		{
+			$(document.getElementById(row_name)).children().eq(i).html('');
+		}
 		for (let i = 0; i < list_item_array.length; i += 1)
 		{
 			this.AddListItemToRow(

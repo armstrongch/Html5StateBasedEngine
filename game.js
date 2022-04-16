@@ -10,13 +10,14 @@ var game =
 	
 	load_game: function()
 	{
-		this.load_state('title_state');
+		this.LoadState('title_state');
+		lists.initialize();
 		list_item.AddListItemsToRow('list_of_stuff', lists.list_of_people);
 		list_item.AddListItemsToRow('list_of_stuff_two_cols', lists.list_of_places);
 		list_item.AddListItemsToRow('list_of_stuff_three_cols', lists.list_of_things);
 	},
 	
-	load_state: function(state)
+	LoadState: function(state)
 	{
 		$('table').css('display', '');
 		$('tr').css('visibility', 'hidden');
