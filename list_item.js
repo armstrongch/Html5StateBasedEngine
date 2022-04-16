@@ -5,6 +5,11 @@ var list_item =
 		return `<div style='clear:both'><p class='list_item_text'><img class='list_item_image' src='./Images/${image_file_name}'/>${item_text}</p></span></div>`;
 	},
 	
+	AppendHTMLItemToRow: function(row_name, column, html_to_add)
+	{
+		$(document.getElementById(row_name)).children().eq(column).append("<p>" + html_to_add + "</p>");
+	},
+	
 	//for itch compatibility, file names are CASE SENSITIVE!
 	AddListItemToRow: function(row_name, column, image_file_name, item_text)
 	{

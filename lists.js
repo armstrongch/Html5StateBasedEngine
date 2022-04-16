@@ -29,7 +29,7 @@ var lists =
 		var thing_names = [
 			'duck', 'book', 'suit', 'rock', 'bucket', 'shirt',
 			'sandwich', 'magnet', 'goose', 'fire extinguisher', 'dog',
-			'mailbox', 'elephant', 'applsauce', 'bowling ball'];
+			'mailbox', 'elephant', 'applesauce', 'bowling ball'];
 		for (let i = 0; i < thing_names.length; i += 1)
 		{
 			var item = {
@@ -41,7 +41,7 @@ var lists =
 					return this.item_name + ': ' + this.item_count;
 				}
 			};
-			item.item_text = item.item_text_gen();
+			item.item_text = item.item_text_gen();	
 			this.list_of_things.push(item);
 		}
 	},
@@ -58,6 +58,14 @@ var lists =
 		}
 		return_html += "</select";
 		
+		return return_html;
+	},
+	
+	generate_dropdown_submission_button: function(select_id, button_text, button_function_name)
+	{
+		var return_html = `<button onclick='${button_function_name}("${select_id}")'>`;
+		return_html += button_text;
+		return_html += "</button>";
 		return return_html;
 	}
 };

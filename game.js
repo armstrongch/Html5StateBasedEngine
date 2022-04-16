@@ -5,8 +5,10 @@ var game =
 	test_state_1:
 		['list_of_stuff',
 		'list_of_stuff_three_cols',
-		'test_row1', 'test_row3',
-		'test_row4'],
+		'test_row1',
+		'test_row3',
+		'test_row4',
+		'update_list'],
 	
 	load_game: function()
 	{
@@ -15,6 +17,12 @@ var game =
 		list_item.AddListItemsToRow('list_of_stuff', lists.list_of_people);
 		list_item.AddListItemsToRow('list_of_stuff_two_cols', lists.list_of_places);
 		list_item.AddListItemsToRow('list_of_stuff_three_cols', lists.list_of_things);
+		
+		list_item.AppendHTMLItemToRow(
+			'update_list', 0, lists.generate_dropdown_from_list(lists.list_of_things,'things_value_increment_selector'));
+		list_item.AppendHTMLItemToRow(
+			'update_list', 0, lists.generate_dropdown_submission_button('things_value_increment_selector', 'Submit', 'button_functions.increment_thing_count'));
+				
 	},
 	
 	LoadState: function(state)

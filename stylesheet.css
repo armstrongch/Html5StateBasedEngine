@@ -55,3 +55,17 @@ button:hover {
 	height: auto;
 	padding: 10px;
 }
+
+select, option {
+	border: 1px solid var(--white_color);
+	background-color: var(--dark_color);
+	color: var(--white_color);
+	padding: 5px;
+	font-size: large;
+}
+
+option:checked {
+	border: 1px solid var(--dark_color);
+	background-color: var(--white_color);
+	color: var(--dark_color);
+}
