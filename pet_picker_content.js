@@ -2,13 +2,14 @@ var pet_picker_content =
 {
 	init_states: function()
 	{
-		game.title_state = ['title'];
-		game.pet_selection_state = ['instructional_text', 'list_of_pets', 'pet_picker'];
-		game.post_pick_state = ['post_pick'];
+		game.title_state = ['title', 'settings'];
+		game.pet_selection_state = ['instructional_text', 'list_of_pets', 'pet_picker', 'settings'];
+		game.post_pick_state = ['post_pick', 'settings'];
 	},
 	
 	setup_page: function()
 	{
+		this.load_audio();
 		game.load_state('title_state');
 		this.setup_pet_list();
 		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
@@ -60,6 +61,15 @@ var pet_picker_content =
 			}
 		}
 		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
+		sound_manager.play_sound_by_name('click');
 		game.load_state('post_pick_state');
+	},
+	
+	load_audio: function()
+	{
+		sound_manager.load_audio('music_track_1', 'placeholder_song.mp3', true);
+		sound_manager.load_audio('music_track_2', 'placeholder_song2.mp3', true);
+		sound_manager.load_audio('click', 'placeholder_sound.wav', false);
+		sound_manager.music_toggle_change();
 	}
 };
