@@ -19,12 +19,14 @@ var game =
 		const d = new Date();
 		d.setTime(d.getTime() + (365*24*60*1000));
 		var expires = "expires=" + d.toUTCString() + ";";
+		var same_site = "SameSite=None;";
 		
 		for (let i = 0; i < save_list.length; i += 1)
 		{
 			var new_cookie = save_list[i].key + "=" +  save_list[i].value + ";";
 			new_cookie += path;
 			new_cookie += expires;
+			new_cookie += same_site;
 			document.cookie = new_cookie;
 		}
 	},
