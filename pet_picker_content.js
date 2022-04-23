@@ -24,6 +24,9 @@ var pet_picker_content =
 			'pet_picker', 0, lists.generate_dropdown_from_list(this.list_of_pets,'pet_picker_select'));
 		list_item.AppendHTMLItemToRow(
 			'pet_picker', 0, lists.generate_dropdown_submission_button('pet_picker_select', 'Pick', 'pet_picker_content.pick_pet'));
+		//test
+		game.save([{key: "boogie", value: "always"},{key: "woogie", value: "never"}]);
+		//test
 	},
 	
 	setup_pet_list: function()
