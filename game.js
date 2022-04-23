@@ -16,17 +16,19 @@ var game =
 	save: function(save_list)
 	{
 		var backup_cookie = document.cookie;
+		var new_cookie = "";
 		try
 		{
-			document.cookie = "";
 			for (let i = 0; i < save_list.length; i += 1)
 			{
-				document.cookie += save_list[i].key + "=" +  save_list[i].value + ";";
+				new_cookie += save_list[i].key + "=" +  save_list[i].value + ";";
 			}
 			const d = new Date();
 			d.setTime(d.getTime() + (365*24*60*1000));
-			document.cookie += "expires=" + d.toUTCString() + ";";
-			document.cookie += "path=\;";
+			new_cookie += "expires=" + d.toUTCString() + ";";
+			new_cookie += "path=\;";
+			
+			document.cookie = new_cookie;
 		}
 		catch (err)
 		{
