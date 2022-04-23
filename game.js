@@ -27,5 +27,22 @@ var game =
 			new_cookie += expires;
 			document.cookie = new_cookie;
 		}
+	},
+	
+	load: function()
+	{
+		var load_list = [];
+		var split_cookies = document.cookie.split(';');
+		for (let i = 0; i < split_cookies.length; i += 1)
+		{
+			var key_value_array = split_cookies[i].split('=');
+			load_list.push(
+				{ 
+					key: key_value_array[0].slice(),
+					value: key_value_array[0].slice()
+				}
+			);
+		}
+		return load_list;
 	}
 };
