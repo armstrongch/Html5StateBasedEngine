@@ -22,7 +22,7 @@ var game =
 		
 		for (let i = 0; i < save_list.length; i += 1)
 		{
-			var new_cookie += save_list[i].key + "=" +  save_list[i].value + "; ";
+			var new_cookie = save_list[i].key + "=" +  save_list[i].value + "; ";
 			new_cookie += path;
 			new_cookie ++ expires;
 			document.cookie = new_cookie;
