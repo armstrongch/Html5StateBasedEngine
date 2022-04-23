@@ -73,7 +73,7 @@ var pet_picker_content =
 			{
 				if (this.list_of_pets[j].item_name == pet_name)
 				{
-					this.list_of_pets[j].pet_picks = pet_picks;
+					this.list_of_pets[j].pet_picks = parseInt(pet_picks);
 					j = load_list.length;
 				}
 			}
