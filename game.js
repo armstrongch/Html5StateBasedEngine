@@ -1,18 +1,5 @@
 var game =
 {
-	title_state:
-		['title'],
-	pet_selection_state:
-		['instructional_text',
-		'list_of_pets',
-		'pet_picker'],
-	
-	load_game: function()
-	{
-		pet_picker_content.init_states();
-		pet_picker_content.setup_page();	
-	},
-	
 	load_state: function(state)
 	{
 		$('table').css('display', '');

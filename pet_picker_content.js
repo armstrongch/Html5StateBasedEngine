@@ -1,5 +1,11 @@
 var pet_picker_content =
 {
+	load_game: function()
+	{
+		this.init_states();
+		this.setup_page();
+	},
+	
 	init_states: function()
 	{
 		game.title_state = ['title', 'settings'];
