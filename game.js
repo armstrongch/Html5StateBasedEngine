@@ -21,11 +21,11 @@ var game =
 		{
 			for (let i = 0; i < save_list.length; i += 1)
 			{
-				new_cookie += save_list[i].key + "=" +  save_list[i].value + ";";
+				new_cookie += save_list[i].key + "=" +  save_list[i].value + "; ";
 			}
 			const d = new Date();
 			d.setTime(d.getTime() + (365*24*60*1000));
-			new_cookie += "expires=" + d.toUTCString() + ";";
+			new_cookie += "expires=" + d.toUTCString() + "; ";
 			new_cookie += "path=\;";
 			
 			document.cookie = new_cookie;
