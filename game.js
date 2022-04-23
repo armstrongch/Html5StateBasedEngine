@@ -15,25 +15,17 @@ var game =
 	//saves a list of key-value pairs
 	save: function(save_list)
 	{
-		var backup_cookie = document.cookie;
-		var new_cookie = "";
-		try
+		var path = "path=\;";
+		const d = new Date();
+		d.setTime(d.getTime() + (365*24*60*1000));
+		var expires = "expires=" + d.toUTCString() + ";";
+		
+		for (let i = 0; i < save_list.length; i += 1)
 		{
-			for (let i = 0; i < save_list.length; i += 1)
-			{
-				new_cookie += save_list[i].key + "=" +  save_list[i].value + "; ";
-			}
-			const d = new Date();
-			d.setTime(d.getTime() + (365*24*60*1000));
-			new_cookie += "expires=" + d.toUTCString() + "; ";
-			new_cookie += "path=\;";
-			
+			var new_cookie += save_list[i].key + "=" +  save_list[i].value + "; ";
+			new_cookie += path;
+			new_cookie ++ expires;
 			document.cookie = new_cookie;
-		}
-		catch (err)
-		{
-			document.cookie = backup_cookie;
-			console.log("failed to save game!");
 		}
 	}
 };
