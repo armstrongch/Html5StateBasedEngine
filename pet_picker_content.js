@@ -18,15 +18,12 @@ var pet_picker_content =
 		this.load_audio();
 		game.load_state('title_state');
 		this.setup_pet_list();
+		this.load_pet_picks();
 		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
-		
 		list_item.AppendHTMLItemToRow(
 			'pet_picker', 0, lists.generate_dropdown_from_list(this.list_of_pets,'pet_picker_select'));
 		list_item.AppendHTMLItemToRow(
 			'pet_picker', 0, lists.generate_dropdown_submission_button('pet_picker_select', 'Pick', 'pet_picker_content.pick_pet'));
-		//test
-		game.save([{key: "boogie", value: "always"},{key: "woogie", value: "never"}]);
-		//test
 	},
 	
 	setup_pet_list: function()
@@ -54,6 +51,35 @@ var pet_picker_content =
 		}
 	},
 	
+	save_pet_picks: function()
+	{
+		var save_list = [];
+		for (let i = 0; i < this.list_of_pets.length; i += 1)
+		{
+			save_list.push({ key: this.list_of_pets[i].item_name, value: this.list_of_pets[i].pet_picks });
+		}
+		game.save(save_list);
+	},
+	
+	load_pet_picks: function()
+	{
+		var load_list = game.load();
+		for (let i = 0; i < load_list.length; i += 1)
+		{
+			var pet_name = load_list[i].key;
+			var pet_picks = load_list[i].value;
+			
+			for (let j = 0; j < load_list.length; j += 1)
+			{
+				if (this.list_of_pets[j].item_name == pet_name)
+				{
+					this.list_of_pets[j].pet_picks = pet_picks;
+					j = load_list.length;
+				}
+			}
+		}
+	},
+	
 	list_of_pets: [],
 	
 	pick_pet: function(select_id)
@@ -71,6 +97,7 @@ var pet_picker_content =
 		}
 		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
 		sound_manager.play_sound_by_name('click');
+		game.save_pet_picks();
 		game.load_state('post_pick_state');
 	},
 	

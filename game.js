@@ -36,12 +36,15 @@ var game =
 		for (let i = 0; i < split_cookies.length; i += 1)
 		{
 			var key_value_array = split_cookies[i].split('=');
-			load_list.push(
-				{ 
-					key: key_value_array[0].slice(),
-					value: key_value_array[1].slice()
-				}
-			);
+			if (key_value_array.length > 1)
+			{
+				load_list.push(
+					{ 
+						key: key_value_array[0].slice(),
+						value: key_value_array[1].slice()
+					}
+				);
+			}
 		}
 		return load_list;
 	}
