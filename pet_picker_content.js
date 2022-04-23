@@ -97,7 +97,7 @@ var pet_picker_content =
 		}
 		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
 		sound_manager.play_sound_by_name('click');
-		game.save_pet_picks();
+		this.save_pet_picks();
 		game.load_state('post_pick_state');
 	},
 	
