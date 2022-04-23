@@ -40,8 +40,8 @@ var game =
 			{
 				load_list.push(
 					{ 
-						key: key_value_array[0].slice(),
-						value: key_value_array[1].slice()
+						key: key_value_array[0].slice().trim(),
+						value: key_value_array[1].slice().trim()
 					}
 				);
 			}
