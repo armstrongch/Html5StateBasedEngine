@@ -4,6 +4,7 @@ var sound_manager =
 	sounds: [],
 	current_music_index: 0,
 	
+	//note - although the itch web player supports mp3, the itch desktop app only supports wav, as far as I know.
 	load_audio: function(name, file_name, is_music)
 	{
 		var audio_element = document.createElement('audio');

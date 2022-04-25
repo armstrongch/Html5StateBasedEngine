@@ -114,8 +114,8 @@ var pet_picker_content =
 	
 	load_audio: function()
 	{
-		sound_manager.load_audio('music_track_1', 'placeholder_song.mp3', true);
-		sound_manager.load_audio('music_track_2', 'placeholder_song2.mp3', true);
+		sound_manager.load_audio('music_track_1', 'placeholder_song.wav', true);
+		sound_manager.load_audio('music_track_2', 'placeholder_song2.wav', true);
 		sound_manager.load_audio('click', 'placeholder_sound.wav', false);
 		sound_manager.music_toggle_change();
 	}
