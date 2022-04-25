@@ -15,6 +15,7 @@ var pet_picker_content =
 	
 	setup_page: function()
 	{
+		game.check_save_mode();
 		this.load_audio();
 		game.load_state('title_state');
 		this.setup_pet_list();
