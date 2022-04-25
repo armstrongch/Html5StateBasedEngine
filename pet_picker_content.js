@@ -78,7 +78,7 @@ var pet_picker_content =
 			var pet_name = load_list[i].key;
 			var pet_picks = load_list[i].value;
 			
-			for (let j = 0; j < load_list.length; j += 1)
+			for (let j = 0; j < this.list_of_pets.length; j += 1)
 			{
 				if (this.list_of_pets[j].item_name == pet_name)
 				{
