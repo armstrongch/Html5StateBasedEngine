@@ -6,7 +6,7 @@
     <title>Incredible Pet Picker Sample</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body onload="pet_picker_content.load_game()">
+  <body onload="pet_picker_content.setup_game()">
 	
 	<table style='display: none'>
 		<tr id='title'>
@@ -14,7 +14,8 @@
 				<h1>Incredible Pet Picker</h1>
 				<p>A sample game by Chris 'Turd Boomerang' Armstrong</p>
 				<p>Placeholder music by Kent Kercher</p>
-				<button onclick="game.load_state('pet_selection_state')">Begin</button>
+				<button onclick="pet_picker_content.begin_game()">Begin</button>
+				<span id='load_button'></span>
 			</td>
 		</tr>
 		<tr id='instructional_text'>
@@ -52,6 +53,7 @@
 	
 	<script src="jquery.min.js" type="text/javascript"></script>
 	<script src="game.js" type="text/javascript"></script>
+	<script src="save.js" type="text/javascript"></script>
 	<script src="list_item.js" type="text/javascript"></script>
 	<script src="lists.js" type="text/javascript"></script>
 	<script src="sound_manager.js" type="text/javascript"></script>

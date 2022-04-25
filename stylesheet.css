@@ -29,11 +29,11 @@ td {
 	outline: 1px solid var(--white_color);
 }
 
-button {
+button, input {
 	border: 1px solid var(--white_color);
 	background-color: var(--dark_color);
 	color: var(--white_color);
-	padding: 10px;
+	padding: 5px;
 	font-size: large;
 	cursor: pointer;
 }
