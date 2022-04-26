@@ -51,6 +51,8 @@ var pet_picker_content =
 		
 	complete_setup: function()
 	{
+		clearInterval(sound_manager.load_fail_interval);
+		sound_manager.load_fail_interval = null;
 		game.load_state('title_state');
 	},
 	
