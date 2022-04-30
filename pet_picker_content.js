@@ -75,10 +75,16 @@ var pet_picker_content =
 				{
 					this.item_text = this.item_name + " the " + this.pet_type + '<br/>"I hope you pick me!"<br/>Total picks: ' + this.pet_picks;
 				},
+				image_onclick: `pet_picker_content.pet_image_onclick('${pet_names[i]}')`
 			};
 			pet.text_gen();
 			this.list_of_pets.push(pet);
 		}
+	},
+	
+	pet_image_onclick: function(name)
+	{
+		alert("My name is " + name + ". Please pick me. I would love to be picked!");
 	},
 	
 	load_pet_picks: function()

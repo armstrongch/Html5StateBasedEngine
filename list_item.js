@@ -17,12 +17,13 @@ var list_item =
 	},
 	
 	//for itch compatibility, file names are CASE SENSITIVE!
-	AddListItemToRow: function(row_name, column, image_file_name, item_text)
+	AddListItemToRow: function(row_name, column, image_file_name, item_text, image_onclick)
 	{
 		$(document.getElementById(row_name)).children().eq(column).append(
-			this.GetListItemHTML(image_file_name, item_text, ""));
+			this.GetListItemHTML(image_file_name, item_text, image_onclick));
 	},
 	
+	//image_onclick must use single quotes. double quotes will break the concatenation in GetListItemHTML
 	AddListItemsToRow: function(row_name, list_item_array)
 	{
 		var column_count = this.GetColumnCount(row_name);
@@ -35,7 +36,8 @@ var list_item =
 			this.AddListItemToRow(
 				row_name, i % column_count,
 				list_item_array[i].image_file_name,
-				list_item_array[i].item_text
+				list_item_array[i].item_text,
+				list_item_array[i].image_onclick,
 			);
 		}
 	},
