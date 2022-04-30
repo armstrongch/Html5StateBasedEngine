@@ -1,8 +1,14 @@
 var list_item =
 {
-	GetListItemHTML: function(image_file_name, item_text)
+	GetListItemHTML: function(image_file_name, item_text, image_onclick)
 	{
-		return `<div style='clear:both'><p class='list_item_text'><img class='list_item_image' src='./Images/${image_file_name}'/>${item_text}</p></span></div>`;
+		var onclick_html = '';
+		if (image_onclick)
+		{
+			onclick_html = 'onclick="' + image_onclick + '"';
+		}
+		
+		return `<div style='clear:both'><p class='list_item_text'><img class='list_item_image' src='./Images/${image_file_name}' ${onclick_html}/>${item_text}</p></span></div>`;
 	},
 	
 	AppendHTMLItemToRow: function(row_name, column, html_to_add)
@@ -14,7 +20,7 @@ var list_item =
 	AddListItemToRow: function(row_name, column, image_file_name, item_text)
 	{
 		$(document.getElementById(row_name)).children().eq(column).append(
-			this.GetListItemHTML(image_file_name, item_text));
+			this.GetListItemHTML(image_file_name, item_text, ""));
 	},
 	
 	AddListItemsToRow: function(row_name, list_item_array)
@@ -29,7 +35,7 @@ var list_item =
 			this.AddListItemToRow(
 				row_name, i % column_count,
 				list_item_array[i].image_file_name,
-				list_item_array[i].item_text,
+				list_item_array[i].item_text
 			);
 		}
 	},
