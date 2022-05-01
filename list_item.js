@@ -1,6 +1,6 @@
 var list_item =
 {
-	GetListItemHTML: function(image_file_name, item_text, image_onclick)
+	GetListItemHTML: function(image_file_name, item_text, image_onclick, image_css_class)
 	{
 		var onclick_html = '';
 		if (image_onclick)
@@ -8,7 +8,7 @@ var list_item =
 			onclick_html = 'onclick="' + image_onclick + '"';
 		}
 		
-		return `<div style='clear:both'><p class='list_item_text'><img class='list_item_image' src='./Images/${image_file_name}' ${onclick_html}/>${item_text}</p></span></div>`;
+		return `<div style='clear:both'><p class='list_item_text'><img class='${image_css_class}' src='./Images/${image_file_name}' ${onclick_html}/>${item_text}</p></span></div>`;
 	},
 	
 	AppendHTMLItemToRow: function(row_name, column, html_to_add)
@@ -17,14 +17,14 @@ var list_item =
 	},
 	
 	//for itch compatibility, file names are CASE SENSITIVE!
-	AddListItemToRow: function(row_name, column, image_file_name, item_text, image_onclick)
+	AddListItemToRow: function(row_name, column, image_file_name, item_text, image_onclick, image_css_class)
 	{
 		$(document.getElementById(row_name)).children().eq(column).append(
-			this.GetListItemHTML(image_file_name, item_text, image_onclick));
+			this.GetListItemHTML(image_file_name, item_text, image_onclick, image_css_class));
 	},
 	
 	//image_onclick must use single quotes. double quotes will break the concatenation in GetListItemHTML
-	AddListItemsToRow: function(row_name, list_item_array)
+	AddListItemsToRow: function(row_name, list_item_array, image_css_class)
 	{
 		var column_count = this.GetColumnCount(row_name);
 		for (let i = 0; i < column_count; i += 1)
@@ -38,6 +38,7 @@ var list_item =
 				list_item_array[i].image_file_name,
 				list_item_array[i].item_text,
 				list_item_array[i].image_onclick,
+				image_css_class
 			);
 		}
 	},

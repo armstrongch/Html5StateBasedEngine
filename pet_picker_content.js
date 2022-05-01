@@ -22,7 +22,7 @@ var pet_picker_content =
 		this.setup_pet_list();
 		this.load_pet_picks();
 		
-		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
+		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets, 'list_item_image_20');
 		list_item.AppendHTMLItemToRow(
 			'pet_picker', 0, lists.generate_dropdown_from_list(this.list_of_pets,'pet_picker_select'));
 		list_item.AppendHTMLItemToRow(
@@ -132,7 +132,7 @@ var pet_picker_content =
 				i = this.list_of_pets.length;
 			}
 		}
-		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
+		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets, 'list_item_image_20');
 		sound_manager.play_sound_by_name('click');
 		this.save_pet_picks();
 		
@@ -142,7 +142,7 @@ var pet_picker_content =
 	begin_game_button: function()
 	{
 		this.load_pet_picks();
-		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets);
+		list_item.AddListItemsToRow('list_of_pets', this.list_of_pets, 'list_item_image_20');
 		game.load_state('pet_selection_state');
 	},
 };
